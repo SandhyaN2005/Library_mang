@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">📚 City Library</h1>
+            <p class="tagline">Your Gateway to Knowledge</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active" data-page="home">🏠 Home</a></li>
+                <li><a href="#" class="nav-link" data-page="books">📖 Books</a></li>
+                <li><a href="#" class="nav-link" data-page="members">👥 Members</a></li>
+                <li><a href="#" class="nav-link" data-page="issue">📤 Issue Book</a></li>
+                <li><a href="#" class="nav-link" data-page="return">📥 Return Book</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Home Page -->
+            <section id="home" class="page active">
+                <div class="welcome-banner">
+                    <div class="banner-content">
+                        <h2>Welcome to City Library</h2>
+                        <p>Discover a world of knowledge and imagination</p>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <span class="stat-icon">📚</span>
+                                <span class="stat-number">5,000+</span>
+                                <span class="stat-label">Books</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon">👥</span>
+                                <span class="stat-number">1,200+</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon">⭐</span>
+                                <span class="stat-number">4.8</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Easy Search</h3>
+                        <p>Find books quickly with our advanced search system</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Mobile Friendly</h3>
+                        <p>Access your library from any device, anywhere</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Smart Management</h3>
+                        <p>Efficient book tracking and member management</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Books Page -->
+            <section id="books" class="page">
+                <h2>📖 Book Collection</h2>
+                
+                <div class="books-section">
+                    <!-- Add Book Form -->
+                    <div class="add-book-form">
+                        <h3>Add New Book</h3>
+                        <form id="addBookForm">
+                            <div class="form-group">
+                                <label for="bookName">Book Name</label>
+                                <input type="text" id="bookName" name="bookName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookAuthor">Author</label>
+                                <input type="text" id="bookAuthor" name="bookAuthor" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookCategory">Category</label>
+                                <select id="bookCategory" name="bookCategory" required>
+                                    <option value="">Select Category</option>
+                                    <option value="Fiction">Fiction</option>
+                                    <option value="Non-Fiction">Non-Fiction</option>
+                                    <option value="Science">Science</option>
+                                    <option value="Technology">Technology</option>
+                                    <option value="History">History</option>
+                                    <option value="Biography">Biography</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add Book</button>
+                        </form>
+                    </div>
+
+                    <!-- Books Table -->
+                    <div class="books-table">
+                        <h3>Available Books</h3>
+                        <div class="table-container">
+                            <table id="booksTable">
+                                <thead>
+                                    <tr>
+                                        <th>Book ID</th>
+                                        <th>Book Name</th>
+                                        <th>Author</th>
+                                        <th>Category</th>
+                                        <th>Availability</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>B001</td>
+                                        <td>The Great Gatsby</td>
+                                        <td>F. Scott Fitzgerald</td>
+                                        <td>Fiction</td>
+                                        <td><span class="status available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>B002</td>
+                                        <td>To Kill a Mockingbird</td>
+                                        <td>Harper Lee</td>
+                                        <td>Fiction</td>
+                                        <td><span class="status available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>B003</td>
+                                        <td>1984</td>
+                                        <td>George Orwell</td>
+                                        <td>Fiction</td>
+                                        <td><span class="status issued">Issued</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>B004</td>
+                                        <td>Sapiens</td>
+                                        <td>Yuval Noah Harari</td>
+                                        <td>Non-Fiction</td>
+                                        <td><span class="status available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>B005</td>
+                                        <td>The Lean Startup</td>
+                                        <td>Eric Ries</td>
+                                        <td>Business</td>
+                                        <td><span class="status available">Available</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Members Page -->
+            <section id="members" class="page">
+                <h2>👥 Library Members</h2>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-avatar">👤</div>
+                        <h3>John Smith</h3>
+                        <p>Member ID: M001</p>
+                        <p>Books Issued: 2</p>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-avatar">👤</div>
+                        <h3>Emily Johnson</h3>
+                        <p>Member ID: M002</p>
+                        <p>Books Issued: 1</p>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-avatar">👤</div>
+                        <h3>Michael Brown</h3>
+                        <p>Member ID: M003</p>
+                        <p>Books Issued: 3</p>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-avatar">👤</div>
+                        <h3>Sarah Davis</h3>
+                        <p>Member ID: M004</p>
+                        <p>Books Issued: 0</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Issue Book Page -->
+            <section id="issue" class="page">
+                <h2>📤 Issue Book</h2>
+                <div class="form-container">
+                    <form id="issueBookForm">
+                        <div class="form-group">
+                            <label for="studentName">Student Name</label>
+                            <input type="text" id="studentName" name="studentName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookNameIssue">Book Name</label>
+                            <select id="bookNameIssue" name="bookNameIssue" required>
+                                <option value="">Select Book</option>
+                                <option value="The Great Gatsby">The Great Gatsby</option>
+                                <option value="To Kill a Mockingbird">To Kill a Mockingbird</option>
+                                <option value="Sapiens">Sapiens</option>
+                                <option value="The Lean Startup">The Lean Startup</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="issueDate">Issue Date</label>
+                            <input type="date" id="issueDate" name="issueDate" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Issue Book</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Return Book Page -->
+            <section id="return" class="page">
+                <h2>📥 Return Book</h2>
+                <div class="form-container">
+                    <form id="returnBookForm">
+                        <div class="form-group">
+                            <label for="bookIdReturn">Book ID</label>
+                            <input type="text" id="bookIdReturn" name="bookIdReturn" placeholder="e.g., B001" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Return Book</button>
+                    </form>
+                    <div id="returnMessage" class="message"></div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 City Library Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
